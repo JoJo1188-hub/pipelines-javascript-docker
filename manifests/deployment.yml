@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jojohubpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jojohubpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: jojohubpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: jojohubpipelinesjavascriptdocker 
+          image: mycontainerregistrybonita.azurecr.io/jojohubpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
